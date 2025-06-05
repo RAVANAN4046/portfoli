@@ -25,7 +25,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
+    <section className="relative w-full min-h-screen overflow-hidden bg-black">
       {/* Particles Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Particles
@@ -41,16 +41,16 @@ const Hero = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-20 h-full flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto px-6 gap-12 text-white text-center">
+      <div className="relative z-20 h-full min-h-screen py-20 flex flex-col-reverse md:flex-row items-center justify-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 gap-8 md:gap-12 text-white text-center">
         {/* Text Section */}
-        <div className="md:w-1/2 flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="w-full md:w-1/2 flex flex-col items-center space-y-6 mt-8 md:mt-0">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Hi, I'm Sachin Babu K
           </h1>
-          <p className="text-xl md:text-2xl mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300">
             Full-Stack MERN Developer
           </p>
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-6 md:gap-8 w-full">
             {/* Button */}
             <GlareHover
               glareColor="#ffffff"
@@ -62,34 +62,40 @@ const Hero = () => {
             >
               <a
                 href="#projects"
-                className="px-6 py-3 text-white font-bold text-3xl bg-transparent rounded-lg shadow-md hover:bg-gray-700 transition"
+                className="px-4 sm:px-6 py-2 sm:py-3 text-white font-bold text-2xl sm:text-3xl bg-transparent rounded-lg shadow-md hover:bg-gray-700 transition"
               >
                 View my Works
               </a>
             </GlareHover>
 
             {/* Dock placed below the button */}
-            <Dock
-              items={dockItems}
-              panelHeight={68}
-              baseItemSize={50}
-              magnification={70}
-            />
+            <div className="w-full max-w-sm mx-auto">
+              <Dock
+                items={dockItems}
+                panelHeight={68}
+                baseItemSize={50}
+                magnification={70}
+              />
+            </div>
           </div>
         </div>
 
         {/* Profile Card Section */}
-        <ProfileCard
-          name="Sachin Babu K"
-          title="MERN Stack Developer"
-          handle="sachinmern"
-          status="Online"
-          contactText="Contact Me"
-          avatarUrl="https://wallpapers.com/images/high/monkey-d-luffy-smile-yghmb75ti4z7p68o.webp"
-          showUserInfo={true}
-          enableTilt={true}
-          onContactClick={() => console.log('Contact clicked')}
-        />
+        <div className="w-full md:w-1/2 flex justify-center">
+          <div className="w-full max-w-sm">
+            <ProfileCard
+              name="Sachin Babu K"
+              title="MERN Stack Developer"
+              handle="sachinmern"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl="https://wallpapers.com/images/high/monkey-d-luffy-smile-yghmb75ti4z7p68o.webp"
+              showUserInfo={true}
+              enableTilt={true}
+              onContactClick={() => console.log('Contact clicked')}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative bg-black text-center text-white min-h-screen flex flex-col items-center justify-center px-6 md:px-20 overflow-hidden"
+      className="relative bg-black text-center text-white min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-20 py-16 sm:py-20 overflow-hidden"
     >
       {/* Particles Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -24,11 +24,11 @@ const About = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">About Me</h2>
 
         <ScrambledText
-          className="scrambled-text-demo text-lg max-w-3xl mx-auto mb-4"
+          className="scrambled-text-demo text-base sm:text-lg max-w-3xl mx-auto mb-4 px-4 sm:px-6"
           radius={100}
           duration={1.2}
           speed={0.5}

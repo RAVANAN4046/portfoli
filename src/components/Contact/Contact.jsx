@@ -25,7 +25,7 @@ const Contact = () => {
       from_name: formData.get('from_name'),
       reply_to: formData.get('reply_to'),
       message: formData.get('message'),
-      to_name: 'Admin' // You can customize this
+      to_name: 'Admin'
     };
 
     try {
@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative bg-black py-20 px-6 md:px-20 text-center overflow-hidden"
+      className="relative bg-black min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 sm:px-6 lg:px-20 text-center overflow-hidden"
     >
       {/* Particles Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -64,27 +64,27 @@ const Contact = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Contact Me</h2>
-        <p className="text-lg text-gray-300 mb-10 max-w-xl mx-auto">
+      <div className="relative z-10 w-full max-w-xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">Contact Me</h2>
+        <p className="text-base sm:text-lg text-gray-300 mb-8 sm:mb-10 max-w-lg mx-auto">
           If you'd like to work together or just say hi, feel free to reach out!
         </p>
         
         {status.submitted && (
-          <div className="mb-6 text-green-400">
+          <div className="mb-4 sm:mb-6 text-green-400 text-sm sm:text-base">
             Thank you! Your message has been sent successfully.
           </div>
         )}
         
         {status.error && (
-          <div className="mb-6 text-red-400">
+          <div className="mb-4 sm:mb-6 text-red-400 text-sm sm:text-base">
             Sorry, there was an error sending your message. Please try again.
           </div>
         )}
 
         <form
           ref={form}
-          className="max-w-xl mx-auto space-y-6"
+          className="space-y-4 sm:space-y-6 w-full"
           onSubmit={sendEmail}
         >
           <input
@@ -92,33 +92,35 @@ const Contact = () => {
             name="from_name"
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 sm:py-3 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
           />
           <input
             type="email"
             name="reply_to"
             placeholder="Your Email"
             required
-            className="w-full px-4 py-3 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 sm:py-3 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
           />
           <textarea
             name="message"
             placeholder="Your Message"
             rows="5"
             required
-            className="w-full px-4 py-3 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 sm:py-3 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
           ></textarea>
 
           {/* Magnetized Button */}
-          <Magnet padding={50} disabled={status.submitting} magnetStrength={50}>
-            <button
-              type="submit"
-              disabled={status.submitting}
-              className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 disabled:opacity-50"
-            >
-              {status.submitting ? 'Sending...' : 'Send Message'}
-            </button>
-          </Magnet>
+          <div className="flex justify-center">
+            <Magnet padding={50} disabled={status.submitting} magnetStrength={50}>
+              <button
+                type="submit"
+                disabled={status.submitting}
+                className="bg-blue-600 text-white font-semibold px-6 py-2 sm:py-3 rounded-md hover:bg-blue-700 transition duration-300 disabled:opacity-50 text-sm sm:text-base"
+              >
+                {status.submitting ? 'Sending...' : 'Send Message'}
+              </button>
+            </Magnet>
+          </div>
         </form>
       </div>
     </section>
