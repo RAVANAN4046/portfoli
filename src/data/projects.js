@@ -1,13 +1,15 @@
 const projects = [
   {
-    title: "MERN Blog Platform",
-    description: "Full-stack blog with auth, rich text editor, and REST API.",
-    link: "https://github.com/yourusername/mern-blog"
+    image: "/src/assets/Screenshot from 2025-06-05 09-48-03.png",
+    title: "OLX-clone",
+    description: "Full-stack OLX clone webApplication.",
+    link: "https://github.com/RAVANAN4046/OLX-clone"
   },
   {
-    title: "E-Commerce Store",
-    description: "Shop with cart, admin dashboard, and Stripe payments.",
-    link: "https://github.com/yourusername/mern-store"
+    image:"/src/assets/Screenshot from 2025-06-05 09-51-44.png",
+    title: "Chit Chat",
+    description: "Real Time Web Chat Application.",
+    link: "https://github.com/RAVANAN4046/whatsapp-Clone"
   }
 ];
 
